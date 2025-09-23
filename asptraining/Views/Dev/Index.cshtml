@@ -1,0 +1,35 @@
+﻿@model List<Developer>
+
+<div class="table-responsive">
+
+	<table class="table table-striped table-hover">
+		<thead>
+			<h1>DEV LIST</h1>
+			<br />
+			<tr>
+				<th>FIRSTNAME</th>
+				<th>MIDDLENAME</th>
+				<th>LASTNAME</th>
+				<th>SPECIALTY</th>
+				<th>HIREDATE</th>
+				<th>ACTIONS</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var dev in Model)  
+			{
+				<tr>
+					<td>@dev.DevFirstName</td>
+					<td>@dev.DevMiddleName</td>
+					<td>@dev.DevLastName</td>
+					<td>@dev.Specialty</td>
+					<td>@dev.HireDate</td>
+					<td>EDIT || DELETE</td>
+				</tr>
+			}
+		</tbody>
+
+	</table>
+
+
+</div>
