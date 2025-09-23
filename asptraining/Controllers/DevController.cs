@@ -18,5 +18,19 @@ namespace asptraining.Controllers
 
             return View(devs);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Developer obj)
+        {
+             obj.IsActive = true;
+            _db.Developer.Add(obj);   
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
