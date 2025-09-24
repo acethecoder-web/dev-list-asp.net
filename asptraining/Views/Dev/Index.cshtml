@@ -21,24 +21,26 @@
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
-				<th>FIRSTNAME</th>
-				<th>MIDDLENAME</th>
-				<th>LASTNAME</th>
-				<th>SPECIALTY</th>
-				<th>HIREDATE</th>
 				<th>ACTIONS</th>
+				<th>FIRST NAME</th>
+				<th>MIDDLE INITIAL</th>
+				<th>LAST NAME</th>
+				<th>SPECIALTY</th>
+				@* <th>HIRE DATE</th> *@
 			</tr>
-			</theadx>
+			</thead>
 		<tbody>
 			@foreach (var dev in Model)
 			{
 				<tr>
+					<td>DETAILS || EDIT || DELETE</td>
 					<td>@dev.DevFirstName</td>
-					<td>@dev.DevMiddleName</td>
+					<td>
+						@(!string.IsNullOrEmpty(dev.DevMiddleName) ? dev.DevMiddleName[0] + "." : "")
+					</td>
 					<td>@dev.DevLastName</td>
 					<td>@dev.Specialty</td>
-					<td>@dev.HireDate</td>
-					<td>EDIT || DELETE</td>
+					@* <td>@dev.HireDate</td> *@
 				</tr>
 			}
 		</tbody>
